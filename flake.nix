@@ -60,13 +60,16 @@
           inputsFrom = [
             config.mission-control.devShell
             config.pre-commit.devShell
-            config.treefmt.build.devShell
+            # config.treefmt.build.devShell
           ];
           buildInputs = with pkgs; [
             python311
             poetry
-            pulumi
-            python311Packages.pulumi
+
+            (writeShellScriptBin "pulumi" ''
+              #!${stdenv.shell}
+              ${lib.getExe poetry} run ${lib.getExe pulumi-bin} "$@"
+            '')
           ];
         };
 
@@ -88,6 +91,7 @@
           inherit (config.flake-root) projectRootFile;
           package = pkgs.treefmt;
           programs.alejandra.enable = true;
+          programs.black.enable = true;
         };
         formatter = config.treefmt.build.wrapper;
       };

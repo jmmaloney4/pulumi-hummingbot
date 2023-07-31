@@ -1,0 +1,4 @@
+name: hummingbots
+runtime:
+  name: python
+description: Hummingbots via Pulumi

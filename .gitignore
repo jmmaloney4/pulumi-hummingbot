@@ -1,2 +1,5 @@
+*.pyc
+venv/
 .pre-commit-config.yaml
 .direnv/
+result

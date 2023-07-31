@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hummingbots"
+version = "0.1.0"
+description = ""
+authors = ["Jack Maloney <jack@maloney.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pulumi = "^3.76.1"
+pulumi-digitalocean = "^4.20.0"
+pulumi-kubernetes = "^4.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
