@@ -65,6 +65,8 @@
           buildInputs = with pkgs; [
             python311
             poetry
+            pulumi
+            python311Packages.pulumi
           ];
         };
 
